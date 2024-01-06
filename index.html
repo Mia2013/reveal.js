@@ -1,40 +1,150 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section><h1>Javascript története</h1></section>
+        <section>
+          <p>
+            90-es évek elején létrehozzák a nyelvet. A különbözőő
+            böngészőgyártók saját implementációkat hoztak létre, ezekkel
+            különböző kiegészítéseket és változtatásokat adtak a nyelvhez.
+          </p>
+        </section>
+        <section>
+          <p>
+            Ennek eredményeként különféle változatai jelentek meg, amelyek
+            között kompatibilitási problémák adódtak. Erre a problémára
+            jelentett megoldást az ECMAScript, aminek célja a JavaScript nyelv
+            egységesítése és szabványosítása.
+          </p>
+        </section>
+        <section>
+          <p>
+            2006-ban jelent meg a jQuery, mint JS könyvtár. Célja: a böngészők
+            közötti különbségek egyszerűsítése, a DOM manipuláció és az
+            eseménykezelés könnyebbé tétele. Könnyen használható és erőteljes
+            eszközkészletet biztosít. Népszerűvé vált az egyszerűségének és a
+            sokoldalúságának köszönhetően.
+          </p>
+        </section>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+        <section><h2>Összehasonlítás</h2></section>
+        <section>
+          <h5>React</h5>
+          <p>
+            A komponens alapú fejlesztési módszertant használja, amely lehetővé
+            teszi a projekt részeinek elkülönítését és újrafelhasználhatóságát,
+            segíti a kód szervezését és karbantartását nagyobb projektek esetén.
+            Tartalmaz beépített állapotkezelést.
+          </p>
+        </section>
+        <section>
+          <h5>jQuery</h5>
+          <p>
+            Nagyobb projekteknél kevésbé lehet strukturált, és könnyen
+            elvesztheti az átláthatóságát. Nem rendelkezik beépített
+            állapotkezelési megoldással.
+          </p>
+        </section>
+        <section><h3>Adatkezelés, teljesítmény</h3></section>
+        <section>
+          <h5>React</h5>
+          <p>
+            Hatékonyan kezeli a nagy adatmennyiségeket, és a virtual DOM révén
+            optimalizált frissítéseket tesz lehetővé, ami javítja a
+            teljesítményt.
+          </p>
+        </section>
+        <section>
+          <h5>jQuery</h5>
+          <p>
+            Nagy adatmennyiségek esetén a jQuery kevésbé hatékony, mivel az
+            eseménykezelők és manipulációk közvetlenül a DOM-on történnek.
+          </p>
+        </section>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+        <section><h3>Reactel kapcsolatos kérdések</h3></section>
+
+        <section>
+          <h6>Hogyan működik a virtuális DOM?</h6>
+          <p>A virtuális DOM egy absztrakt másolata a valós DOMnak.</p>
+          <p>
+            Ha a virtuális DOM-ban változás történik, akkor a virtuális DOM
+            összehasonlítja azt az előző állapotával(diff algoritmus), hogy
+            meghatározza a változást. A változások alapján a React csak az
+            érintett részeket frissíti a valós DOM-ban.
+          </p>
+          <p>Ez hatékonyabb, mint az egész DOM újrarajzolása.</p>
+        </section>
+
+        <section>
+          <h6>React szerveren történő futtatása?</h6>
+          <p>
+            Build után már futtatható az alkalmazás szerveren, node_modules
+            mappa nélkül. A build mappában már csak a minimális és optimalizált
+            fájlok találhatók. (Dockerben szintén fut a buildelt verzió)
+          </p>
+        </section>
+        <section>
+          <h6>Validáció?</h6>
+          <p>
+            A validáció kliens oldalon (is) történik. A felhasználó akár
+            azonnali visszajelzést kaphat az adatok helyességéről. A kliens a
+            szerverrel csak helyes adatok esetén kommunikál (kevesebb request).
+          </p>
+        </section>
+        <section>
+          <h3>Szerveroldali fejlesztés vagy kliens-szerver kapcsolat?</h3>
+        </section>
+        <section>
+          <p>A Razor Pages lehetővé teszi a C# és HTML könnyű keverését.</p>
+          <p>
+            <small>
+              *Visual Studioban nem működik megfelelően js-re a kódkiegészítés,
+              és a live reload</small
+            >
+          </p>
+        </section>
+        <section>
+          <p>
+            RESTful API, amely azért jött létre, hogy egyszerű és könnyen
+            érthető módon tudjon egymással kommunikálni a kliens és a szerver.
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
 </html>
